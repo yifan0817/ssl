@@ -1,0 +1,42 @@
+<view class="info_item">
+  <label>小程序名称:</label>
+  <view class="info_content">
+    {{appName}}
+  </view>
+</view>
+<view class="info_item">
+  <label>微信版本号:</label>
+  <view class="info_content">
+    {{systemInfo.version}}
+  </view>
+</view>
+<view class="info_item">
+  <label>手机型号:</label>
+  <view class="info_content">
+    {{systemInfo.model}}
+  </view>
+</view>
+<view class="info_item">
+  <label>网络类型:</label>
+  <view class="info_content">
+    {{netInfo.networkType}}
+  </view>
+</view>
+<view class="info_item">
+  <label>操作系统版本:</label>
+  <view class="info_content">
+    {{systemInfo.system}}
+  </view>
+</view>
+<!--<view class="info_item">
+  <label>客户端平台:</label>
+  <view class="info_content">
+    {{systemInfo.platform}}
+  </view>
+</view>
+<view class="info_item">
+  <label>客户端SDK版本:</label>
+  <view class="info_content">
+    {{systemInfo.SDKVersion}}
+  </view>
+</view>-->

@@ -1,0 +1,91 @@
+page{
+    background: #E0E0E0;
+    font-family: "微软雅黑";
+}
+.formitem{
+    height: 3.5rem;
+    line-height: 3.5rem;
+    background: #F8F8F8;
+    margin-bottom: 2px;
+    position: relative;
+}
+
+.formitem label{
+    width: 25%;
+    text-align: right;
+    display: inline-block;
+}
+
+.formitem input{
+    display: inline-block;
+    border: 1px solid #AAA;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 1rem;
+    padding: 0.5rem;
+    width: 60%;
+    font-size: 1.2rem;
+}
+
+.section{
+    display: inline-block;
+    margin-left: 1.5rem;
+    width: 60%;
+    font-size: 1.2rem;
+}
+
+.picker{
+    display: inline-block;
+    color: #555;
+}
+
+.signsubmit{
+    background: dodgerblue;
+    width: 90%;
+    margin: 1rem;
+}
+
+.radio-group{
+    display: inline-block;
+    margin-left: 1.5rem;
+}
+
+radio{
+    margin-left: 1rem;
+}
+
+.userLogo{
+    display: inline-block;
+    margin-left: 1.5rem;
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.preLogo{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background: #F0F0F0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 12%;
+}
+
+.preLogo image{
+    width: 3rem;
+    height: 3rem;
+}
+
+.must::before{
+    content: '*';
+    color:red;
+}
+
+.star{
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+}

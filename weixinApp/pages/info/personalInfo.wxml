@@ -1,0 +1,28 @@
+<view class="user_logo">
+    <label>头像：</label>
+    <image src="{{logo_url}}" mode="widthFix"></image>
+</view>
+<view class="info_item">
+  <label>用户名:</label>
+  <view class="info_content">
+    <input type="text" value="{{userData.nickName}}" disabled='true'/>
+  </view>
+</view>
+<view class="info_item">
+  <label>性别:</label>
+  <view class="info_content">
+    <input type="text" value="{{userData.sex}}" disabled="{{disabled}}"/>
+  </view>
+</view>
+<view class="info_item">
+  <label>生日:</label>
+  <view class="info_content">
+    <input type="text" value="{{userData.date}}" disabled="{{disabled}}" />
+  </view>
+</view>
+<view class="info_item">
+  <label>Email:</label>
+  <view class="info_content">
+    <input type="text" value="{{userData.email}}" disabled="{{disabled}}" />
+  </view>
+</view>

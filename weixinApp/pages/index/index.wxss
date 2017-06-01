@@ -1,0 +1,169 @@
+/**index.wxss**/
+page{
+  background: #F0F0F0;
+  display: block;  
+  min-height: 100%; 
+  font-size: 16px;
+  font-family: '微软雅黑';
+}
+
+.info{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #999;
+  font-size: 0.73rem;
+  padding-bottom: 0.7rem;
+  background: #FFF;
+  border-bottom: 1px solid #DDD;
+}
+
+.infoimg{
+  width: 2.6rem;
+  height: 2.6rem;
+  background-size: 100%;
+  margin: 0.5rem auto;
+}
+
+.infoimg_1{
+  background-image:url('https://www.nwsuaforchestra.cn/images/cha.png');
+}
+
+.infoimg_2{
+  background-image:url('https://www.nwsuaforchestra.cn/images/jiepai.png');
+}
+
+.infoimg_3{
+  background-image:url('https://www.nwsuaforchestra.cn/images/violin.png');
+}
+
+.infoimg_4{
+  background-image:url('https://www.nwsuaforchestra.cn/images/yuan.png');
+}
+
+.news{
+  margin: 0.7rem auto;
+  background: #FFF;
+}
+
+.news_top{
+  padding: 0.4rem 1rem;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD; 
+  background: url('https://www.nwsuaforchestra.cn/images/news.png') no-repeat 1rem center;
+  padding-left: 2.5rem;
+}
+
+.news_content{
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #DDD;
+}
+
+.news_info{
+  color: #CCC;
+  font-size: 0.7rem;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.news_comment{
+  position: absolute;
+  top:0;
+  right: 0;
+}
+
+.swiper{
+  margin: 0.7rem auto;
+  background: #FFF;
+  border-bottom: 1px solid #DDD;
+  position: relative;
+}
+
+swiper{
+  padding: 0.4rem 0;
+  height: 11rem;
+}
+
+.swiper_top{
+  padding: 0.4rem 1rem;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD; 
+  background: url('https://www.nwsuaforchestra.cn/images/swiper.png') no-repeat 1rem center;
+  padding-left: 2.5rem;
+}
+
+.swiper image{
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.swiper_more{
+  padding-bottom: 0.2rem;
+  font-size: 0.8rem;
+  color: #CCC;
+  text-align: center;
+}
+
+.topics{
+  margin: 0.7rem auto;
+  background: #FFF;
+}
+
+.topics_top{
+  padding: 0.4rem 1rem;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD; 
+  background: url('https://www.nwsuaforchestra.cn/images/topics.png') no-repeat 1rem center;
+  padding-left: 2.5rem;
+}
+
+.topics_content{
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #DDD;
+}
+
+.motto{
+  background: #FFF;
+  margin: 0.7rem auto;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD; 
+}
+
+.motto_top{
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid #DDD; 
+  background: url('https://www.nwsuaforchestra.cn/images/motto.png') no-repeat 1rem center;
+  padding-left: 2.5rem;
+}
+
+.motto_content{
+  text-align: center;
+  padding: 1rem 0;
+  font-family: 'PingFang SC';
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.help{
+  text-align: center;
+  background: #FFF;
+  font-size: 0.8rem;
+  color: #AAA;
+  margin: 0.7rem auto 0;
+  padding: 0.5rem 0 0.7rem;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD; 
+}
+
+.phone{
+  text-align: center;
+  color: #AAA;
+  padding: 0.2rem;
+  font-size: 0.8rem; 
+}

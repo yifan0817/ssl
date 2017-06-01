@@ -1,0 +1,18 @@
+<scroll-view class="message_board">
+    <view class="message_content" wx:for="{{messages}}" wx:key="messages">
+        <view class="content_info">
+            <view class="info_name">{{item.name}}</view>
+            <view class="info_time">{{item.time}}</view>
+        </view>
+        <view class="content_mes">{{item.content}}</view>
+        <view class="content_ctrl">
+            <view class="good" data-obj="{{item}}" bindtap="addgood">赞({{item.good.length}})</view>
+            <view class="reply" data-obj="{{item}}" bindtap="reply">评论({{item.reply.length}})</view>
+            <view class="allreply" data-obj="{{item}}" bindtap="showreplyinfo">查看评论</view>
+        </view>
+    </view>
+</scroll-view>
+<view class="space"></view>
+<view class="input_area">
+    <input type="text" class="input" confirm-type="send" placeholder="{{holder}}" bindconfirm="confirm" value="{{input_mes}}" focus="{{isfocus}}" bindblur="losefocus"/>
+</view>

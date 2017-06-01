@@ -1,0 +1,11 @@
+<view style="display:{{showreplyinfo}}">
+    <scroll-view class="replyinfo">
+        <view class="infocontent" wx:for="{{innermessages}}" wx:key="innermessages">
+            <view class="infocontent_top">
+                <view class="content_name">{{item.name}}</view>
+                <view class="content_time">{{item.time}}</view>
+            </view>
+            <view class="content_cont">{{item.content}}</view>
+        </view>
+    </scroll-view>
+</view>

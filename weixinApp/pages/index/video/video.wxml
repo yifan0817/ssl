@@ -1,0 +1,11 @@
+<view class="caidan">哈哈，看到彩蛋啦！</view>
+<view class="title">
+  《蝙蝠序曲三连排》
+</view>
+<video id="myVideo" src="http://vliveachy.tc.qq.com/vhot2.qqvideo.tc.qq.com/r05056yscia.m701.mp4?sdtfrom=v4010&guid=67f3747b9eef9ae5059de763c1ade114&vkey=2AA6BEADB0B32DC65A3ACA3F1C149A7A49B10461B790A42EB2FE16BB4C6B2324711F1C6E5825A6792DCE88F697D3FCA8F873FC0B9DE424EAFA971C664CA5C8AD958E2D51183269D1A5BFAF43D092E16F77DC148634C2AAE4&ocid=2584286636&ocid=353113516" enable-danmu danmu-btn controls></video>
+<view class="btn-area">
+  <input bindblur="bindInputBlur" />
+  <button bindtap="bindSendDanmu">发送弹幕</button>
+</view>
+<view class="info">想看更多精彩视频，扫一扫二维码就可以看到啦!</view>
+<image src="https://www.nwsuaforchestra.cn/images/video.png" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/video.png"></image>

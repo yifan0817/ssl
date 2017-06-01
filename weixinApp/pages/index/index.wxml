@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<!--乐团信息-->
+<view class="info">
+  <view class="introduction" bindtap="introduction"><view class="infoimg infoimg_1"></view>乐团简介</view>
+  <view class="history" bindtap="history"><view class="infoimg infoimg_2"></view>乐团历史</view>
+  <view class="members" bindtap="members"><view class="infoimg infoimg_3"></view>团员风采</view>
+  <view class="message" bindtap="message"><view class="infoimg infoimg_4"></view>留言板</view>
+</view>
+<!--乐团新闻-->
+<view class="news">
+  <view class="news_top">乐团新闻</view>
+  <view class="news_content" wx:for="{{newsList}}" wx:key="title" data-newsData="{{item}}" bindtap="newsContent">
+    <label>【{{item.newstype}}】</label>{{item.title}}
+    <view class="news_info">
+      <view class="news_time">{{item.info.time}}</view>
+      <view class="news_comment">{{item.reply.length}}评论</view>
+    </view>
+  </view>
+</view>
+<!--轮播图-->
+<view class="swiper">
+  <view class="swiper_top">乐团风采</view>
+  <swiper autoplay="true" indicator-dots="true">
+    <block wx:for="{{swiper_imgs}}" wx:key="swiper_imgs">
+      <swiper-item>
+        <image src="{{item}}" mode="widthFix" data-url="{{item}}" bindtap="showImg"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="swiper_more" bindtap="swiper_more">查看更多>></view>
+</view>
+<!--热门话题-->
+<view class="topics">
+  <view class="topics_top">热门话题</view>
+  <view class="topics_content" data-topicData="{{item}}" wx:for="{{topicsList}}" bindtap="getTopic" wx:key="title">
+    {{item.title}}{{item.content}}
+  </view>
+</view>
+<view class="motto">
+  <view class="motto_top">永远的团训</view>
+  <view class="motto_content" animation="{{animationData}}" bindlongtap="showVideo" bindtap="motto">苦练出真艺  团结如一家</view>
+</view>
+<!--帮助与反馈-->
+<view class="help">
+  <contact-button>帮助与反馈</contact-button>
+</view>
+<view class="phone" bindtap="phone">客服电话:18829354965</view>

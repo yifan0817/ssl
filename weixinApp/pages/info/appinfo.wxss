@@ -1,0 +1,27 @@
+page{
+    background:#EFEFEF;
+    font-family: "微软雅黑";
+}
+
+.info_item{
+    height: 3rem;
+    position: relative;
+    background: #FFF;
+    margin-bottom: 0.5rem;
+}
+
+label{
+    width: 35%;
+    display: inline-block;
+    line-height: 3rem;
+    margin-left: 2rem; 
+    /*background: orangered; */
+}
+
+.info_content{
+    width: 50%;
+    margin-left: 1rem; 
+    line-height: 3rem;
+    display: inline-block;
+    /*background:deepskyblue;*/
+}

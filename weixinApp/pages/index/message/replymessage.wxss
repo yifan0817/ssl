@@ -1,0 +1,33 @@
+/* pages/index/message/replymessage.wxss */
+.replyinfo{
+    position: relative;
+    font-family: '微软雅黑';
+}
+
+.infocontent{
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 0.9rem;
+}
+
+.infocontent_top{
+    height: 2rem;
+    line-height: 2rem;
+    position: relative;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.content_name{
+    display: inline-block;
+    position: absolute;
+    left: 5%;
+}
+
+.content_time{
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+}
+
+.content_cont{
+    padding: 1rem;
+}

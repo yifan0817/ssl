@@ -1,0 +1,26 @@
+<view class="members">团员风采</view>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/members/m1.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/members/m1.jpg"></image>
+</view>
+<text>覃超，资环学院2008届本科生 ，水保081班，水保所2014级博士生。管乐队萨克斯声部成员，管弦乐团贝斯声部成员。覃超学长是乐团的骨灰级元老，八年来为乐队乐团做出了无数的贡献，实乃我辈楷模！</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/members/m2.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/members/m2.jpg"></image>
+</view>
+<text>张剑，2010级生科101。管乐队七代目，大三时兼任大学生管弦乐团团长。长号组成员，在任期间励精图治，为管乐队后人留下了无数传奇故事！</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/members/m3.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/members/m3.jpg"></image>
+</view>
+<text>何煦，2011级水保113班。曾任大学生管乐队副队长，萨克斯声部成员。相信每位13级的萨克斯声部队员对这位学长都不会陌生，第一次见面，就从煦哥身上感受到了家的温暖。管乐队的每位队员心中永远萌萌哒的暖男学长！</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/members/m4.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/members/m4.jpg"></image>
+</view>
+<text>刘沛峰，2012级生科122，学霸一枚。萨克斯声部成员，乐团贝斯声部成员。最最最热心的学长没有之一，学弟们眼里最好说话最好相处的学长！</text>
+<text>管弦乐团二十年，是一个传承。“苦练出真艺，团结如一家"，这句话深深地烙在了每个团员心里。历代前辈在自己的大学生涯里为乐团做出了贡献，随即功成身退，只留下了些许零星的影像资料和一个个传奇的故事。但是，你们留下的又不仅仅是这些。管弦乐团二十年的辉煌，是每代团员呕心沥血辛苦工作才换来的，你们的精神，你们的汗水，永远留在每位管弦人的心里！ </text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/members/m5.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/members/m5.jpg"></image>
+</view>
+<text class="word">过去你们在这里默默耕耘着。。。</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/members/m6.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/members/m6.jpg"></image>
+</view>
+<text class="word">如今我们接下你们的火炬，继续前行！</text>

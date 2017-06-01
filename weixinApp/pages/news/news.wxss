@@ -1,0 +1,23 @@
+/* pages/news/news.wxss */
+page{
+    background: #EFEFEF;
+    font-family: '微软雅黑';
+}
+
+.news_content{
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #CCC;
+}
+
+.news_info{
+  color: #AAA;
+  font-size: 0.7rem;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.news_comment{
+  position: absolute;
+  top:0;
+  right: 0;
+}

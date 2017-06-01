@@ -1,0 +1,79 @@
+page {
+  background: #f0f0f0;
+  font-family: '微软雅黑';
+}
+
+.news_title {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
+.news_info {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.letter_content {
+  text-indent: 2em;
+  margin: 0.5rem;
+  line-height: 1.5rem;
+}
+
+.image_content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.image_content image {
+  width: 100%;
+}
+
+.reply_title {
+  margin: 2rem 1rem 0.5rem;
+  border-left: 4px solid #3d0;
+  padding-left: 0.8rem;
+}
+
+.reply input {
+  border: 1px solid #aaa;
+  padding: 0.5rem 1rem;
+  width: 80%;
+  margin: 0.5rem auto 1rem;
+  border-radius: 5px;
+}
+
+.reply_content {
+  padding-bottom: 1rem;
+  margin: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.reply_content:last-child {
+  padding-bottom: 1rem;
+  margin: 1rem;
+  border-bottom: none;
+}
+
+.item_info{
+    position: relative;
+    height: 2rem;
+}
+
+.item_name {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.item_time {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.item_content {
+    padding-left: 1rem;
+}

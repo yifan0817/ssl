@@ -1,0 +1,29 @@
+<view class="history">乐团历史</view>
+<label>管乐队</label>
+<text>西农管乐队成立于1996年，发展至今，拥有：木管组“无簧乐器”短笛，长笛；“单簧乐器”单簧管，萨克斯；“双簧乐器”巴松管，双簧管。铜管组：小号，长号，圆号，大号等。另外，管乐队还包括打击乐器组：定音鼓、马林巴、管鈡、钢片琴、小军鼓、大军鼓、三角铁以及大锣等。管乐队主要担任“一二·九”升旗仪式，校运动会开幕式等活动的演出任务。</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i3.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i3.jpg"></image>
+</view>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i4.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i4.jpg"></image>
+</view>
+<label>弦乐队 </label>
+<text>西农弦乐队成立于1998年，汇集了西农众多的艺术人才。在编制上，弦乐队拥有小提琴、中提琴、大提琴以及低音提琴等弓弦乐器，还有钢琴，竖琴等拨弦乐器。无论是音乐会还是校内其他各种文艺晚会，都少不了弦乐队的身影。</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i5.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i5.jpg"></image>
+</view>
+<label>音乐会</label>
+<text>提到交响乐团，最重要的部分当然就是音乐会啦~每年的新年音乐会和“五四”音乐会可谓是西农交响乐团工作的重头戏。每当新学期开始，乐团就会在主管老师和指挥老师的带领下，开始紧锣密鼓地筹备着，就是为了给全校师生奉上一台高质量的音乐会。</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i6.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i6.jpg"></image>
+</view>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i7.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i7.jpg"></image>
+</view>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i8.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i8.jpg"></image>
+</view>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i9.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i9.jpg"></image>
+</view>
+<view class="motto">繁荣昌盛，生生不息！</view>

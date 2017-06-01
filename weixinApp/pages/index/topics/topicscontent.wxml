@@ -1,0 +1,16 @@
+<view class="topic_title">{{title}}</view>
+<view class="topic_content">
+  <label>本次话题：</label>{{content}}
+</view>
+
+<view class="reply">
+  <view class="reply_title">热门评论</view>
+  <input type="text" placeholder="我也来说两句" confirm-type="send" bindconfirm="send" value="{{inputValue}}" bindfocus="checkload"/>
+  <view class="reply_content" wx:for="{{reply}}" wx:key="name">
+    <view class="item_info">
+      <view class="item_name">{{item.name}}</view>
+      <view class="item_time">{{item.time}}</view>
+    </view>
+    <view class="item_content">{{item.content}}</view>
+  </view>
+</view>

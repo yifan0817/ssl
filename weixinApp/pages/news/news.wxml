@@ -1,0 +1,10 @@
+<!--pages/news/news.wxml-->
+<view class="news">
+  <view class="news_content" wx:for="{{newsList}}" wx:key="title" data-newsData="{{item}}" bindtap="newsContent">
+    <label>【{{item.newstype}}】</label>{{item.title}}
+    <view class="news_info">
+      <view class="news_time">{{item.info.time}}</view>
+      <view class="news_comment">{{item.reply.length}}评论</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/chat/chat.wxml-->
+<view class="showUsers" bindtap="showUsers">查看当前在线用户</view>
+<view style="display:{{online_users}}">
+  <view class="online_users">
+    <view wx:for="{{users_array}}" wx:key="users_array" class="online_user">{{item.name}}</view>
+  </view>
+</view>
+<scroll-view class="chat_content" scroll-y="true" scroll-top="{{top}}">
+  <view class="{{item.type}}" wx:for="{{message_array}}" wx:key="message_array" data-index="{{item.index}}">
+    <view class="message_name">{{item.name}}
+      <label class="time">{{item.time}}</label>
+    </view>
+    <view class="message_content" data-info="{{item}}" bindlongtap="messageCtrl">{{item.content}}
+    </view>
+  </view>
+</scroll-view>
+<view class="chat_bottom" style="margin-bottom:{{input_mb}}">
+  <input type="text" class="chat_input" placeholder="输入聊天内容" bindblur="inputblur" value="{{input_mes}}" />
+  <view class="chat_send" bindtap="sendmessage">发 送</view>
+</view>

@@ -1,0 +1,20 @@
+<view class="introduction">乐团简介</view>
+<text>西北农林科技大学交响乐团成立于2007年，由西农管乐队与西农弦乐队合并而成。自成立之初，便受到了校党、团委的高度重视。经过十多年的发展，现已颇具规模。西农交响乐团隶属于西北农林科技大学大学生艺术团，是丰富大学生校园文化生活的中坚力量。</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i1.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i1.jpg"></image>
+</view>
+<label>苦练出真艺</label>
+<text>西农管弦人秉承着“苦练出真艺，团结如一家”的队训。刻苦训练，认真演出，如兄弟姐妹般团结在一起，氛围和谐融洽。大多数大一新生都没有相关的音乐基础，但就是凭借着一份对音乐的热爱和自强不息的心，每一位乐团成员都不懈地坚持着早、晚训和管弦合训。风雨无阻，成功的完成各项训练和演出任务。</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i2.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i2.jpg"></image>
+</view>
+<label>团结如一家</label>
+<text>在排练厅，在舞台，我们是并肩携手的战友；在学习中，在生活中，我们是相亲相爱的一家人。如果说，是音乐让我们相聚，那么，真情则让我们紧紧相依。</text>
+<view class="imageBlock">
+  <image src="https://www.nwsuaforchestra.cn/images/introduction/i10.jpg" mode="widthFix" bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/images/introduction/i10.jpg"></image>
+</view>
+<label>招贤纳士</label>
+<text>如果你也音乐，如果你也在寻找一个温暖的大家庭，那就快来吧，加入西农交响乐团将是你永不的选择。孑立他乡，知音难觅。西农管弦永远是你最温馨的港湾。</text>
+<view class="QQ">
+  <image src="https://www.nwsuaforchestra.cn/pictures/QQ.jpg" mode="widthFix"bindtap="showImg" data-url="https://www.nwsuaforchestra.cn/pictures/QQ.jpg"></image>
+</view>

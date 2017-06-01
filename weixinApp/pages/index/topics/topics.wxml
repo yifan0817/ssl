@@ -1,0 +1,9 @@
+<view class="topics">
+  <view class="topics_content" wx:for="{{topicsList}}" wx:key="title" data-newsData="{{item}}" bindtap="topicsContent">
+    <label>【{{item.topicstype}}】</label>{{item.title}}
+    <view class="topics_info">
+      <view class="topics_time">{{item.info.time}}</view>
+      <view class="topics_comment">{{item.reply.length}}评论</view>
+    </view>
+  </view>
+</view>

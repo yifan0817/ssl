@@ -1,0 +1,59 @@
+
+<!--pages/info/info.wxml-->
+<view class="user_info">
+  <view class="user_pic">
+    <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+  </view>
+  <view class="user_name">{{userInfo.nickName}}</view>
+  <view class="login">
+    <view class="wxLogin" bindtap="wxLogin">微信登录</view>
+    <view class="myLogin" bindtap="myLogin">账号登录</view>
+  </view>
+</view>
+<view class="menu" bindtap="personalInfo">
+  个人资料
+  <image src="https://www.nwsuaforchestra.cn/images/personal.png"></image>
+</view>
+<view class="menu" bindtap="sign">
+  注册账号
+  <image src="https://www.nwsuaforchestra.cn/images/sign.png"></image>
+</view>
+<view class="menu" bindtap="appinfo">
+  应用信息
+  <image src="https://www.nwsuaforchestra.cn/images/appinfo.png"></image>
+</view>
+<view class="menu" bindtap="shareMP">
+  分享小程序
+  <image src="https://www.nwsuaforchestra.cn/images/share.png"></image>
+</view>
+<view class="menu" bindtap="signout">
+  退出登录
+  <image src="https://www.nwsuaforchestra.cn/images/exit.png"></image>
+</view>
+<view class="mask" style="display:{{showLoginBox}}"></view>
+<view class="loginbox" style="display:{{showLoginBox}}">
+  <view class="loginbox_title">用户登录</view>
+  <form bindsubmit="loginSubmit">
+    <label class="account_icon">
+      <image src="https://www.nwsuaforchestra.cn/images/account.png"></image>
+    </label>
+    <input type="text" class="account_input" name="account"/>
+    <label class="passwd_icon">
+      <image src="https://www.nwsuaforchestra.cn/images/passwd.png"></image>
+    </label>
+    <input type="text" class="passwd_input" name="passwd" password="{{showpasswd}}" focus="{{passwdfocus}}" />
+    <button class="login_btn" form-type="submit">登录</button>
+    <button class="sign_btn" bindtap="sign">注册</button>
+    <label class="show_passwd">
+      <image src="{{eyesrc}}" bindtap="showpasswd"></image>
+    </label>
+  </form>
+  <view class="closeLoginBox" bindtap="closeLoginBox">
+    <image src="https://www.nwsuaforchestra.cn/images/closeLoginBox.png"></image>
+  </view>
+</view>
+<view class="mask" style="display:{{showShare}}"></view>
+<view class="share" style="display:{{showShare}}">
+  <image src="{{share_url}}" mode="aspectFit"></image>
+  <view class="close_share" bindtap="closeShare"><image src="https://www.nwsuaforchestra.cn/images/closeLoginBox.png"></image></view>
+</view>

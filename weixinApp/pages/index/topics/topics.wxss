@@ -1,0 +1,21 @@
+page{
+    background: #EFEFEF;
+}
+
+.topics_content{
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #CCC;
+}
+
+.topics_info{
+  color: #AAA;
+  font-size: 0.7rem;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.topics_comment{
+  position: absolute;
+  top:0;
+  right: 0;
+}

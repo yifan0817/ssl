@@ -1,0 +1,137 @@
+/* pages/chat/chat.wxss */
+
+page {
+  background: #f0f0f0;
+  font-family: '微软雅黑';
+}
+
+.chat_content {
+  display: block;
+  width: 100%;
+  height: 28rem;
+}
+
+.chat_bottom {
+  display: block;
+  width: 100%;
+  height: 3rem;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  font-size: 1rem;
+}
+
+.chat_input {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 5%;
+  margin: auto;
+  border: 1px solid #3d0;
+  border-radius: 4px;
+  width: 70%;
+  padding: 0.3rem;
+}
+
+.chat_send {
+  display: inline-block;
+  position: absolute;
+  height: 2rem;
+  line-height: 2rem;
+  top: 50%;
+  right: 5%;
+  margin-top: -1rem;
+  color: limegreen;
+}
+
+.message {
+  display: block;
+  width: 700rpx;
+  margin: 0.5rem auto;
+  padding: 0.3rem 1rem;
+}
+
+.mymessage {
+  display: block;
+  width: 700rpx;
+  margin: 0.5rem auto;
+  margin-right: 1rem;
+  padding: 0.3rem 1rem;
+  text-align: right;
+}
+
+.admin {
+  display: block;
+  width: 80%;
+  margin: 1rem auto;
+  padding: 0.3rem;
+  text-align: center;
+  font-size: 0.8rem;
+  background: #CFCFCF;
+  border-radius: 6px;
+  color: #333;
+}
+
+.admin .message_name,.admin .time {
+  display: none;
+}
+
+.message:last-child, .mymessage:last-child {
+  margin-bottom: 4rem;
+}
+
+.message .message_content {
+  display: inline-block;
+  border: 1px solid limegreen;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background: limegreen;
+  margin-top: 0.5rem;
+}
+
+.mymessage .message_content {
+  display: inline-block;
+  border: 1px solid limegreen;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background: limegreen;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: left;
+}
+
+.mymessage .message_name {
+  margin-right: 0.5rem;
+}
+
+.time {
+  font-size: 0.85rem;
+}
+
+.showUsers {
+  text-align: center;
+  padding: 0.5rem;
+  border-bottom: 0.1rem solid #ccc;
+}
+
+.online_users {
+  position: fixed;
+  top: 2rem;
+  background: #fff;
+  z-index: 2;
+  padding: 1rem;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
+
+.online_user {
+  width: 30%;
+  font-size: 1.2rem;
+  text-align: center;
+  overflow: hidden;
+}

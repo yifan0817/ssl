@@ -1,0 +1,54 @@
+/* pages/index/introduction.wxss */
+page{
+    display: block;  
+    min-height: 100%; 
+    font-size: 16px;
+    font-family: '微软雅黑';
+    background: #F0F0F0;
+}
+.introduction{
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.author{
+    text-align: center;
+    padding: 0.5rem;
+}
+
+label{
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+text{
+    line-height: 1.2rem;
+    width: 95%;
+    display: block;
+    margin: 0.5rem auto;
+    text-indent: 2em;
+}
+
+.imageBlock{
+  width: 90%;
+  margin:0.5rem auto;
+}
+
+image{
+    width: 100%;
+}
+
+text:last-child::after{
+    content: '';
+    display: block;
+    height: 3rem;
+}
+
+.QQ{
+  margin-top: 1.5rem;
+}

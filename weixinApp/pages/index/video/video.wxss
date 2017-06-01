@@ -1,0 +1,60 @@
+page {
+  background: #f2f2f2;
+}
+
+.caidan {
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1.8rem;
+  color: #4d0;
+  text-align: center;
+  font-family: '微软雅黑';
+}
+
+.title {
+  color: #777;
+  text-align: center;
+}
+
+video {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.info {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #777;
+}
+
+image {
+  display: block;
+  width: 40%;
+  margin: 1rem auto;
+}
+
+.btn-area{
+  position: relative;
+  height: 4rem;
+  /*background: #444;*/
+}
+
+.btn-area input {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.5rem;
+  border: 1px solid #CCC;
+  width: 55%;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.btn-area button{
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+  width: 6rem;
+  font-size: 0.85rem;
+  color: #FFF;
+  background: #3D0;
+}

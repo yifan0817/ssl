@@ -1,0 +1,50 @@
+page{
+    background:#EFEFEF;
+    font-family: "微软雅黑";
+}
+
+.info_item{
+    height: 3rem;
+    position: relative;
+    background: #FFF;
+    margin-bottom: 0.5rem;
+}
+
+label{
+    width: 20%;
+    display: inline-block;
+    line-height: 3rem;
+    margin-left: 1.5rem;  
+}
+
+.info_content{
+    width: 70%;
+    display: inline-block;
+}
+
+input{
+    border: 1px solid #CCC;
+    padding: 0.5rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.2rem;
+    border-radius: 5px;
+}
+
+.user_logo{
+    background: #FFF;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.user_logo label{
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    margin-top: -2rem;
+}
+
+image{
+    width: 30%;
+    margin-left: 10rem;
+}

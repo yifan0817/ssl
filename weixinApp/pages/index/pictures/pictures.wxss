@@ -1,0 +1,22 @@
+/* 单个图片容器的样式 */
+page{
+  background: #F0F0F0;
+}
+.img_item {
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+.img_item{
+    margin-bottom: 10rem;
+}
+.pulldown{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background: #DDD;
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+}

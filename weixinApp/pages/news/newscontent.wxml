@@ -1,0 +1,26 @@
+<template name="letter">
+  <view class="letter_content">
+    <text> {{item.letter}}</text>
+  </view>
+</template>
+<template name="picture">
+  <view class="image_content">
+    <image src="{{item.picurl}}" mode="aspectFit" data-url="{{item.picurl}}" bindtap="showImg"></image>
+  </view>
+</template>
+<view class="news_title">{{title}}</view>
+<view class="news_info">{{info.time}}</view>
+<view class="news_content" wx:for="{{news_content}}" wx:key="type">
+  <template is="{{item.type==1?'letter':'picture'}}" data="{{item}}" />
+</view>
+<view class="reply">
+  <view class="reply_title">热门评论</view>
+  <input type="text" placeholder="我也来说两句" confirm-type="send" bindconfirm="send" value="{{inputValue}}" bindfocus="checkload"/>
+  <view class="reply_content" wx:for="{{reply}}" wx:key="name">
+    <view class="item_info">
+      <view class="item_name">{{item.name}}</view>
+      <view class="item_time">{{item.time}}</view>
+    </view>
+    <view class="item_content">{{item.content}}</view>
+  </view>
+</view>

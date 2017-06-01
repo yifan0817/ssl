@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/video/video",
+    "pages/index/introduction/introduction",
+    "pages/index/members/members",
+    "pages/index/message/message",
+    "pages/index/message/replymessage",
+    "pages/index/history/history",
+    "pages/index/topics/topics",
+    "pages/index/topics/topicscontent",
+    "pages/index/pictures/pictures",
+    "pages/chat/chat",
+    "pages/news/news",
+    "pages/news/newscontent",
+    "pages/info/info",
+    "pages/info/sign",
+    "pages/info/personalInfo",
+    "pages/info/appinfo"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#3B0",
+    "navigationBarTitleText": "西农交响",
+    "navigationBarTextStyle":"dark",
+    "backgroundColor":"#CCC"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "交响首页",
+      "iconPath":"icon/w1.png",
+      "selectedIconPath":"icon/b1.png"
+    },{
+      "pagePath": "pages/news/news",
+      "text": "乐团新闻",
+      "iconPath":"icon/w2.png",
+      "selectedIconPath":"icon/b2.png"
+    }, {
+      "pagePath": "pages/chat/chat",
+      "text": "大家来谝",
+      "iconPath":"icon/w3.png",
+      "selectedIconPath":"icon/b3.png"
+    },{
+      "pagePath": "pages/info/info",
+      "text": "个人中心",
+      "iconPath":"icon/w4.png",
+      "selectedIconPath":"icon/b4.png"
+    }]
+  }
+}
