@@ -1,0 +1,74 @@
+body {
+    padding: 50px;
+    font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+label {
+    margin-bottom: 0.6rem !important;
+}
+
+h1 {
+    width: 60%;
+    margin: 0.5rem auto;
+    text-align: center;
+}
+
+.login {
+    width: 30%;
+    margin: 6rem auto;
+}
+
+.nologin {
+    display: none;
+}
+
+#submit {
+    display: inline-block;
+    width: 49%;
+}
+
+#signin {
+    display: inline-block;
+    width: 49%;
+    margin-top: -0.5px;
+}
+
+.login_bottom {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #AAA;
+    letter-spacing: 0.25rem;
+}
+
+.page {
+    position: relative;
+    width: 90%;
+    margin: 5rem auto 0;
+}
+
+.nopage {
+    display: none;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+}
+
+main{
+    position: absolute;
+    top: 0;
+    left: 21%;
+    width: 79%;
+}
+
+table img{
+	width: 3rem;
+}

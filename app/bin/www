@@ -1,0 +1,390 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('app:server');
+var https = require('https');
+var fs = require("fs");
+var ws = require('ws');
+var express = require('express');
+var request = require('request');
+var formidable = require('formidable')
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '443');
+app.set('port', port);
+
+/**
+ * Create HTTPS server.
+ */
+
+var options = {
+  key: fs.readFileSync('keys/214071619870601.key'),
+  cert: fs.readFileSync('keys/214071619870601.pem')
+};
+
+var server = https.createServer(options, app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+//参考文档：http://blog.csdn.net/q3585914/article/details/68942889
+var router = app.rout; //获取router路由中间件
+router.get('/getUserList', function(req, res) { //返回在线用户名单接口
+  //console.log('getUserList request...');
+  var list = [];
+  for (var i = 0; i < userList.length; i++) {
+    list.push({
+      name: userList[i]
+    })
+  }
+  res.send(JSON.stringify(list))
+})
+
+var loginstat = require('./loginstat.js');
+router.post('/wxLogin', function(req, res) { //登录状态
+  let grant_type = 'authorization_code',
+    appid = 'wx0e7ed09c5e600c92',
+    secret = '1a58030d9a08c0b782546150dde05fe2',
+    js_code = req.body.code;
+
+  console.log('js_code:' + js_code);
+
+  request('https://api.weixin.qq.com/sns/jscode2session?grant_type=' + grant_type + '&appid=' + appid + '&secret=' + secret + '&js_code=' + js_code, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      var session_key = JSON.parse(body).session_key,
+        openid = JSON.parse(body).openid,
+        sessionid = openid + session_key;
+      // console.log(sessionid+':'+openid+session_key)
+      //数据库存储
+      loginstat.insertData({
+        createdAt: new Date(),
+        sessionid: sessionid //openid+session_key
+      })
+      res.json({
+        sessionid: sessionid
+      })
+    } else {
+      console.log(err)
+    }
+  })
+})
+
+var account = require('./account.js');
+
+router.get('/getAllUsers', function(req, res) {
+  account.getAllUsers(res)
+})
+
+router.post('/myLogin', function(req, res) {
+  var data = {
+    username: req.body.account,
+    passwd: req.body.passwd
+  }
+  account.selectData(data, res)
+})
+
+router.post('/sign', function(req, res) {
+  var form = new formidable.IncomingForm(); //创建上传表单
+  form.encoding = 'utf-8'; //设置编辑
+  form.uploadDir = 'public/avatar/'; //设置上传目录
+  form.keepExtensions = true; //保留后缀
+  form.maxFieldsSize = 2 * 1024 * 1024; //文件大小
+
+  form.parse(req, function(err, fields, files) {
+    if (err) {
+      console.log('Error:' + err);
+      return;
+    }
+    var username = fields.username; //用户名
+    var extName = files.logo.path.split('.')[1]; //后缀名
+    var avatarName = username + '_logo.' + extName;
+    var newPath = form.uploadDir + avatarName;
+    // fs.renameSync(files.logo.path, newPath); //重命名
+
+    fields.avatarUrl = 'https://www.nwsuaforchestra.cn/' + newPath.slice(7);
+    account.insertData(fields, res, files.logo.path, newPath)
+  });
+
+})
+
+router.post('/signout', function(req, res) {
+  loginstat.delData(req.body, res)
+})
+
+router.get('/isLoad', function(req, res) {
+  var sessionid = req.query.sessionid;
+  // console.log('sessionid is '+sessionid)
+  loginstat.selectData({
+    sessionid: sessionid
+  }, res)
+})
+
+var message = require('./messages.js');
+router.get('/getMessages', function(req, res) {
+  message.selectData({}, res);
+})
+
+router.post('/postMessages', function(req, res) {
+  //从前端获取到要插入的信息
+  var postData = {
+    messageID: req.body.messageID,
+    content: req.body.data,
+    name: req.body.name,
+    time: req.body.time,
+    good: req.body.good,
+    reply: req.body.reply
+  }
+  message.insertData(postData, res)
+})
+
+router.post('/postInnerMessages', function(req, res) {
+  //从前端获取到要插入的信息
+  var postData = {
+      messageID: req.body.messageID,
+      reply: req.body.data
+    }
+    // console.log(postData);
+  message.updateData(postData, res)
+})
+
+router.post('/addGood', function(req, res) {
+  //从前端获取到要插入的信息
+  var updateData = {
+    messageID: req.body.messageID,
+    good: req.body.good
+  }
+  message.updateData(updateData, res)
+})
+
+router.post('/shareMP', function(req, res) {
+  //从前端获取到要插入的信息
+  var appid = req.body.appid,
+    secret = req.body.secret;
+  request('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=' + appid + '&secret=' + secret, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      var access_token = JSON.parse(body).access_token;
+      // console.log(access_token);
+      request({
+        url: 'https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token=' + access_token,
+        method: "POST",
+        body: JSON.stringify({
+          path: "pages/index/index"
+        })
+      }, function(error, response, body) {
+        if (!error && response.statusCode == 200) {
+          // fs.writeFile("./public/images/share/share.png", body, function(err) {
+          //   if (err) {
+          //     console.log("存储二维码图片失败");
+          //   }
+          //   console.log("存储二维码图片成功");
+          // });
+          res.json({
+            success: true,
+            picurl: 'https://www.nwsuaforchestra.cn/images/share/share.png'
+          })
+        } else {
+          res.json({
+            success: false
+          })
+        }
+      }).pipe(fs.createWriteStream('./public/images/share/share.png'));
+    } else {
+      res.json({
+        success: false
+      })
+      console.log(err);
+    }
+  })
+})
+
+var picnames = fs.readdirSync('./public/pictures');
+router.get('/getPics', function(req, res) {
+  var url = 'https://www.nwsuaforchestra.cn/pictures/'
+  var startIndex = req.query.startIndex - 0;
+  if (startIndex >= picnames.length) {
+    res.json({
+      success: false
+    })
+    return;
+  }
+  // console.log(startIndex, startIndex+10);
+  var returnData = picnames.slice(startIndex, startIndex + 10);
+  for (var i = 0; i < returnData.length; i++) {
+    returnData[i] = {
+      pic: url + returnData[i],
+      height: 0
+    }
+  }
+  // console.log(returnData.length);
+  res.json({
+    success: true,
+    list: returnData
+  })
+})
+
+var news = require('./getNewsList.js')
+router.get('/getNewsList', news.getNewsList) //获取新闻列表
+router.post('/insertNewsList', news.insertNewsList) //插入新闻列表
+router.post('/replyNews', news.replyNews) //新闻回复
+
+var news = require('./Topics.js')
+router.get('/getTopicsList', news.getTopicsList) //获取新闻列表
+router.post('/insertTopicsList', news.insertTopicsList) //插入新闻列表
+router.post('/replyTopics', news.replyTopics) //新闻回复
+
+
+server.listen(port, 'www.nwsuaforchestra.cn', function() {
+  console.log('Https server listening on port ' + 443);
+});
+
+//把创建好的https服务器丢进websocket的创建函数里，ws会用这个服务器来创建wss服务
+var wss = new ws.Server({
+  server: server
+});
+
+//同样，如果丢进去的是个http服务的话那么创建出来的还是无加密的ws服务
+var userList = [];
+var messageList = [];
+wss.on('connection', function(wsConnect) {
+  // console.log(wsConnect);
+  //console.log('在线人数： '+wss.clients.size);
+  wsConnect.on('message', function(message) {
+    var mes = JSON.parse(message);
+    if (mes.login) {
+      if (mes.name != undefined) {
+        //加载历史消息
+        wsConnect.send(JSON.stringify({
+          history: true,
+          messageList: messageList
+        }))
+
+        wss.broadcast(JSON.stringify({
+          data: '欢迎' + mes.name + '来到西农交响聊天室',
+          name: '管理员',
+          time: mes.time
+        }));
+      }
+      if (userList.indexOf(mes.name) == -1 && mes.name != undefined) {
+        userList.push(mes.name);
+        console.log('用户：' + mes.name + ' 已登录...' + '当前用户数量：' + userList.length);
+      }
+      return;
+    } else if (mes.exit) {
+      wss.broadcast(JSON.stringify({
+        data: mes.name + '离开了西农交响聊天室',
+        name: '管理员',
+        time: mes.time
+      }));
+      var newList = [];
+      for (var i = 0; i < userList.length; i++) {
+        if (userList[i] != mes.name) {
+          newList.push(userList[i])
+        }
+      }
+      userList = newList;
+      console.log('用户：' + mes.name + ' 离开了西农交响聊天室' + '当前用户数量：' + userList.length);
+      return;
+    } else if (mes.mesBack) {
+      console.log('消息撤回');
+      // console.log(mes.createTime)
+      if (new Date().valueOf() - mes.createTime > 60000) {
+        wsConnect.send(JSON.stringify({
+          backError: true
+        }))
+      } else {
+        for (var j = 0; j < messageList.length; j++) {
+          if (mes.messageID == messageList[j].messageID) {
+            messageList.splice(j, 1);
+          }
+        }
+        wss.broadcast(JSON.stringify({
+          data: mes.name + '撤回了一条消息',
+          name: '管理员',
+          messageID: mes.messageID,
+          mesBack: true
+        }));
+      }
+      return;
+    }
+
+    console.log('收到消息：' + mes.data);
+    wss.broadcast(message);
+    mes.content = mes.data;
+    messageList.push(mes)
+  });
+});
+
+//广播  
+wss.broadcast = function(ws) {
+  wss.clients.forEach(function each(client) {
+    client.send(ws);
+  });
+};
+
+
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

@@ -1,0 +1,97 @@
+var MongoClient = require('mongodb').MongoClient;
+var DB_CONN_STR = 'mongodb://yifan0817:950817@127.0.0.1:27017/test'; //数据库为 test
+
+var insertData = function(db, callback) {
+    //连接到表 test
+    var collection = db.collection('test');
+    //插入数据
+    var data = {
+        "name": "菜鸟教程",
+        "password": "123456"
+    };
+    collection.insert(data, function(err, result) {
+        if (err) {
+            console.log('Error:' + err);
+            return;
+        }
+        callback(result);
+    });
+}
+
+var selectData = function(search, db, callback) {
+    var collection = db.collection('test');
+    collection.find(search).toArray(function(err, result) {
+        if (err) {
+            console.log('Error:' + err);
+            return;
+        }
+        callback(result);
+    });
+}
+
+var updateData = function(db, callback) {  
+    //连接到表  
+    var collection = db.collection('test');
+    //更新数据
+    var whereStr = {"name":'菜鸟教程'};
+    var updateStr = {$set: { "password" : "666666" }};
+    collection.update(whereStr,updateStr, function(err, result) {
+        if(err)
+        {
+            console.log('Error:'+ err);
+            return;
+        }     
+        callback(result);
+    });
+}
+
+var delData = function(db, callback) {  
+  //连接到表  
+  var collection = db.collection('test');
+  //删除数据
+  var whereStr = {"name":'菜鸟工具'};
+  collection.remove(whereStr, function(err, result) {
+    if(err)
+    {
+      console.log('Error:'+ err);
+      return;
+    }     
+    callback(result);
+  });
+}
+
+MongoClient.connect(DB_CONN_STR, function(err, db) {
+    console.log("连接成功！");
+    // insertData(db, function(result) {
+    //     console.log(result);
+    //     db.close();
+    // });
+    
+    // var search = {"name":'yifan0817'}
+    // selectData(search, db, function(result) {
+    //     console.log(result);
+    //     db.close();
+    // })
+
+    // updateData(db, function(result) {
+    //     console.log(result.result);
+    //     db.close();
+    // });
+
+    // var search = {};
+    // selectData(search, db, function(result) {
+    //     console.log(result);
+    //     db.close();
+    // })
+    
+    delData(db,function(result){
+        console.log(result.result);
+        db.close();
+    })
+
+    var search = {};
+    selectData(search, db, function(result) {
+        console.log(result);
+        db.close();
+    })
+});
